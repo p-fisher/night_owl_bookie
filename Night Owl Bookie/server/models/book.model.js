@@ -22,6 +22,9 @@ const BookSchema = new mongoose.Schema({
         type: Number,
         required: [true,'Number of pages required']
     },
+    description: {
+        type: Text
+    },
     likes: {
         type: Number
     }
