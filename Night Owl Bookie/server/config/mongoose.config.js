@@ -6,4 +6,4 @@ mongoose.connect(`mongodb://localhost/${BookDb}`,{
     useUnifiedTopology: true,
 })
     .then(()=>console.log(`Established connection with ${BookDb}`))
-    .catch((err)=>console.log('Something went wrong connecting to the database'))
+    .catch((err)=>console.log('Something went wrong connecting to the database', err))

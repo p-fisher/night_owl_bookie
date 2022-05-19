@@ -23,13 +23,12 @@ const BookSchema = new mongoose.Schema({
         required: [true,'Number of pages required']
     },
     description: {
-        type: Text
+        type: String
     },
     likes: {
         type: Number
     }
 
-},{timestamps:true})
+},{timestamps:true});
 
-const Book = mongoose.model("Book",BookSchema);
-module.exports = Book;
+module.exports = mongoose.model("Book",BookSchema);
