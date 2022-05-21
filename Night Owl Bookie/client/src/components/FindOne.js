@@ -6,21 +6,21 @@ import "../App.css";
 const FindOne = (props) => {
     const { id } = useParams();
     const navigate = useNavigate();
+    // const [oneBook, setOneBook] = useState({});
     const [oneBook, setOneBook] = useState({});
-
     useEffect(() => {
     // console.log(id);
         axios
             .get(`http://localhost:8000/api/books/${id}`)
             .then((res) => {
                 console.log(res.data);
-                setOneBook(res.data);
+                setOneBook(res.data.Book);
                 console.log(oneBook);
             })
             .catch((err) => {
                 console.log(err);
             });
-    },[]);
+    },[id]);
 
     // const deleteHandler = () => {
     //     axios

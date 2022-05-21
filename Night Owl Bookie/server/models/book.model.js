@@ -23,7 +23,9 @@ const BookSchema = new mongoose.Schema({
             'Classics', 
             'Comic Book or Graphic Novel', 
             'Detective and Mystery', 
-            'Fantasy, Historical', 
+            'Fantasy', 
+            'Historical',
+            "Nonfiction",
             'Fiction'],
         required : [true, "Genre required"] 
     },
