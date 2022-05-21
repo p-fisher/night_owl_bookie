@@ -18,7 +18,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/details/:id" element={<FindOne />} />
                     <Route path="/list_all" element={<FindAll />} />
-\                    {/* <Route path="/suggest" element={<SuggestOne />} /> */}
+                    {/* <Route path="/suggest" element={<SuggestOne />} /> */}
                     {/* <Route path="/edit/:id" element={<ChangeOne />} /> */}
                     {/* <Route path="/error" element={<Error />} /> */}
                     <Route path="/comments/book/:id" element={<Comment />} />
