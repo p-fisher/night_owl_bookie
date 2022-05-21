@@ -57,7 +57,6 @@ const FindAll = (props) => {
                         <th>Book Title</th>
                         <th>Image</th>
                         <th>Author</th>
-                        <th>Title</th>
                         <th>Genre</th>
                         <th>Published</th>
                         <th>Length</th>
