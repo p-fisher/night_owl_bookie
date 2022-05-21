@@ -39,6 +39,7 @@ const FindOne = (props) => {
     };
 
     return (
+        <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black'}}>
         <div>
             <h2>{oneBook.title}</h2>
             <p>Title: {oneBook.title}</p>
@@ -50,6 +51,7 @@ const FindOne = (props) => {
             <p>Description: {oneBook.description}</p>
             <p>Likes: {oneBook.likes}</p>
             <button onClick={deleteHandler}>Delete</button>
+        </div>
         </div>
     );
 };
