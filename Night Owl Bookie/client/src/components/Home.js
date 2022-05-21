@@ -11,17 +11,17 @@ function Home() {
             </header>
             <div className="about-us-section">
                 <h1 className="home-title">HOME</h1>
-                <p>We started in 2022 as a place where people can come in for refreshing suggestions of reading.</p>
-                <p>Anyone who is a fan of literature is welcome to look into our books of the month and make suggestions for upcoming lists!</p>
+                <p className="home-p">We started in 2022 as a place where people can come in for refreshing suggestions of reading.</p>
+                <p className="home-p">Anyone who is a fan of literature is welcome to look into our books of the month and make suggestions for upcoming lists!</p>
             </div>
             <div className="home-buttons-container">
-                <button>
-                    <Link to={"/list_all"}>
+                <button className="BOTM-home">
+                    <Link to={"/list_all"} className="link">
                     BOOKS OF THE MONTH
                     </Link>
                 </button>
-                <button>
-                    <Link to={""}>
+                <button className="BS-home">
+                    <Link to={""} className="link">
                     BOOK SUGGESTIONS
                     </Link>
                 </button>
