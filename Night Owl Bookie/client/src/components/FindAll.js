@@ -48,7 +48,7 @@ const FindAll = (props) => {
         {/* <div> */}
         {/* <div> */}
 
-        <h1>List All</h1>
+        <h1>Books of the Month</h1>
 
             <div>
                 {/* <Link to={"/CreateNew"}>Add an Book</Link> */}
