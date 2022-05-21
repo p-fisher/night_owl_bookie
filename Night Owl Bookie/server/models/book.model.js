@@ -7,10 +7,25 @@ const BookSchema = new mongoose.Schema({
         minlength: [2,'Title must be at least 2 characters in length'],
         unique: [true,'Book title must be unqiue']
     },
+    imageUrl: {
+        type: String,
+        required: [true, "Book image required"]
+    },
     authorName: {
         type: String,
         required: [true,'Author\'s name is required!'],
         minlength: [2,'Name must be at least 2 characters in length']
+    },
+    genre: {
+        type: String,
+        enum: [
+            'Action and Adventure', 
+            'Classics', 
+            'Comic Book or Graphic Novel', 
+            'Detective and Mystery', 
+            'Fantasy, Historical', 
+            'Fiction'],
+        required : [true, "Genre required"] 
     },
     year: { /*publication year */
         type: Number,
