@@ -21,24 +21,24 @@ const FindAll = (props) => {
             .catch((err) => console.log(err));
     }, []);
 
-    // const deleteFilter = (idFromBelow) => {
-    //     axios
-    //         .delete(`http://localhost:8000/api/books/${idFromBelow}`)
-    //         .then((res) => {
-    //             console.log(res.data);
-    //             setBookList(
-    //                 bookList.filter((book) => book._id !== idFromBelow)
-    //             );
-    //         })
-    //         // const newList = bookList.filter(
-    //         //     (book, index) => book._id !== idFromBelow
-    //         // );
-    //         // setBookList(newList);
-    //         // })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
+    const deleteFilter = (idFromBelow) => {
+        axios
+            .delete(`http://localhost:8000/api/books/${idFromBelow}`)
+            .then((res) => {
+                console.log(res.data);
+                setBookList(
+                    bookList.filter((book) => book._id !== idFromBelow)
+                );
+            })
+            // const newList = bookList.filter(
+            //     (book, index) => book._id !== idFromBelow
+            // );
+            // setBookList(newList);
+            // })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
     return (
         <div>
@@ -47,8 +47,7 @@ const FindAll = (props) => {
         <h1>List All</h1>
 
             <div>
-                {/* <Link to={"/new"}>Add an Book</Link> */}
-                {/* <p>We have quotes by:</p> */}
+                {/* <Link to={"/CreateNew"}>Add an Book</Link> */}
             </div>
             <table style={{ margin: "auto", border: "1px solid black" }}>
                 {/* <thead style={{ backgroundColor: "lightgray", color: "white" }}> */}
@@ -71,14 +70,14 @@ const FindAll = (props) => {
                         bookList.map((book, index) => (
                             <tr key={index}>
                                 <td style={{ textAlign: "left" }}>{book.title}</td>
-                                <td style={{ textAlign: "left" }}>{book.imageUrl}</td>
+                                <td style={{ textAlign: "left" }}><img stylesrc={book.imageUrl} alt=""></img></td>
                                 <td style={{ textAlign: "left" }}>{book.authorName}</td>
                                 <td style={{ textAlign: "left" }}>{book.genre}</td>
                                 <td style={{ textAlign: "left" }}>{book.year}</td>
                                 <td style={{ textAlign: "left" }}>{book.pages}</td>
                                 <td style={{ textAlign: "left" }}>{book.description}</td>
                                 <td style={{ textAlign: "left" }}>{book.likes}</td>
-                                {/* <td>
+                                <td>
                                     <button
                                         className="edit-button-style"
                                         onClick={() => {
@@ -95,7 +94,7 @@ const FindAll = (props) => {
                                     >
                                         Delete
                                     </button>
-                                </td> */}
+                                </td>
                             </tr>
                         ))
                         : null}

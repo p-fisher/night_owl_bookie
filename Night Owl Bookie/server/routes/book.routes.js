@@ -12,3 +12,4 @@ module.exports = (app) => {
 
 
 // from PF: do we need a "suggestOneBook"?
+// from PF: what about a PATCH for editing instead of PUT (PUT replaces the whole record where PATCH edits)
