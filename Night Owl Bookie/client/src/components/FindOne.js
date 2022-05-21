@@ -40,7 +40,10 @@ const FindOne = (props) => {
 
     return (
         <div>
-        <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Bookie&nbsp;&nbsp;<button>Home</button></div>
+        <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Bookie&nbsp;&nbsp;<button  onClick={() => {
+                                            navigate(`/`);
+                                        }}
+                                    >Home</button></div>
         <div style={{marginTop: '20px'}}>
             <h2>{oneBook.title}</h2>
             <p><img style={{width:'300px'}} src={oneBook.imageUrl} alt=""></img></p>
