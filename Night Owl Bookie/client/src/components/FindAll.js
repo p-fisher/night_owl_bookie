@@ -3,13 +3,13 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 
-// const FindAll = (props) => {
-//     const { bookList, setBookList } = props;
-//     const navigate = useNavigate();
-
 const FindAll = (props) => {
-    const [bookList, setBookList] = useState([]);
+    const { bookList, setBookList } = props;
     const navigate = useNavigate();
+
+// const FindAll = (props) => {
+//     const [bookList, setBookList] = useState([]);
+//     const navigate = useNavigate();
 
     useEffect(() => {
         axios
@@ -52,7 +52,8 @@ const FindAll = (props) => {
                 {/* <p>We have quotes by:</p> */}
             </div>
             <table style={{ margin: "auto", border: "1px solid black" }}>
-                <thead style={{ backgroundColor: "lightgray", color: "white" }}>
+                {/* <thead style={{ backgroundColor: "lightgray", color: "white" }}> */}
+                <thead>
                     <tr>
                         <th>Book Title</th>
                         {/* <th>Action Available</th> */}
