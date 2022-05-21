@@ -42,7 +42,7 @@ const FindOne = (props) => {
         <div>
             <h2>{oneBook.title}</h2>
             <p>Title: {oneBook.title}</p>
-            <p>Image: <img style={{width:"50px"}} src={oneBook.imageURL} alt=""></img></p>
+            <p>Image: <img style={{width:'50px'}} src={oneBook.imageUrl} alt=""></img></p>
             <p>Author: {oneBook.authorName}</p>
             <p>Genre: {oneBook.genre}</p>
             <p>Publication Date: {oneBook.year}</p>
