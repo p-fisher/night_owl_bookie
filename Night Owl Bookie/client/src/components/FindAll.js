@@ -8,6 +8,7 @@ import "../App.css";
 //     const navigate = useNavigate();
 
 const FindAll = (props) => {
+    // const [bookList, setBookList] = useState([]);
     const [bookList, setBookList] = useState([]);
     const navigate = useNavigate();
 
