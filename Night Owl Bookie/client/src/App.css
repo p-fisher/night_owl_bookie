@@ -2,16 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -24,15 +16,31 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.home-page-container {
+  background-color: blue;
+  text-align: center;
+  height: 1000px;
+  background-image: url(https://unblast.com/wp-content/uploads/2018/10/Sky-Stars-Pattern.jpg);
+  background-size: 100%;
+  color: whitesmoke;
+}
+.NOB-header {
+  width: 100%;
+  height: 35%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.NOB-logo {
+  width: 22%;
+  height: 100%;
 }
+
+.home-title{
+  font-size: 70px;
+  background-color: black;
+}
+
+.about-us-section{
+  background-color: black;
+  padding-bottom: 5%;
+}
+

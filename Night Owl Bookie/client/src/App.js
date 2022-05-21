@@ -1,7 +1,7 @@
 import "./App.css";
 
 // import Main from "./views/Main";
-// import Home from "./components/Home";
+import Home from "./components/Home";
 import FindOne from "./components/FindOne";
 import FindAll from "./components/FindAll";
 // import SuggestOne from "./components/SuggestOne";
@@ -14,7 +14,7 @@ function App() {
         <BrowserRouter>
             <div className="App">
                 <Routes>
-                    {/* <Route path="/" element={<Home />} /> */}
+                    <Route path="/" element={<Home />} />
                     <Route path="/details/:id" element={<FindOne />} />
                     <Route path="/list_all" element={<FindAll />} />
 \                    {/* <Route path="/suggest" element={<SuggestOne />} /> */}
