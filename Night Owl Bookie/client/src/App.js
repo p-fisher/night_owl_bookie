@@ -1,27 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-// The following two lines allow the use of bootstrap in all components
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-bootstrap';
+import "./App.css";
+
+// import Main from "./views/Main";
+// import CreateNew from "./components/CreateNew";
+import FindOne from "./components/FindOne";
+import FindAll from "./components/FindAll";
+// import SuggestOne from "./components/SuggestOne";
+// import ChangeOne from "./components/ChangeOne";
+// import Error from "./components/Error";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<FindAll />} />
+                    {/* <Route path="/create" element={<CreateNew />} /> */}
+                    <Route path="/details" element={<FindOne />} />
+                    <Route path="/list_all" element={<FindAll />} />
+\                    {/* <Route path="/suggest" element={<SuggestOne />} /> */}
+                    {/* <Route path="/edit/:id" element={<ChangeOne />} /> */}
+                    {/* <Route path="/error" element={<Error />} /> */}
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;

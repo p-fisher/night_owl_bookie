@@ -7,3 +7,6 @@ module.exports = (app) => {
     app.put("/api/books/:id", bookCtrl.updateExistingBook);
     app.delete("/api/books/:id", bookCtrl.deleteAnExistingBook);
 };
+
+
+// from PF: do we need a "suggestOneBook"?
