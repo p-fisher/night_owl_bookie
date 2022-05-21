@@ -43,26 +43,32 @@ const FindAll = (props) => {
 
     return (
         <div>
+        <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Bookie&nbsp;&nbsp;<button onClick={() => {
+                                            navigate(`/`);
+                                        }}
+                                    >Home</button></div>
+        <div style={{marginTop: '20px'}}>
+        {/* <div> */}
         {/* <div> */}
 
-        <h1>List All</h1>
+        <h1>Books of the Month</h1>
 
             <div>
                 {/* <Link to={"/CreateNew"}>Add an Book</Link> */}
             </div>
-            <table style={{ margin: "auto", border: "1px solid black" }}>
+            <table style={{ margin: "auto", border: "1px solid black", width: "600px"}}>
                 {/* <thead style={{ backgroundColor: "lightgray", color: "white" }}> */}
-                <thead>
+                <thead style={{backgroundColor: "grey", textAlign: "left"}}>
                     <tr>
                         <th>Book Title</th>
-                        <th>Image</th>
+                        {/* <th>Image</th>
                         <th>Author</th>
-                        <th>Genre</th>
+                        <th>Genre</th> */}
                         <th>Published</th>
-                        <th>Length</th>
+                        {/* <th>Length</th>
                         <th>Description</th>
-                        <th>Likes</th>
-                        {/* <th>Action Available</th> */}
+                        <th>Likes</th> */}
+                        <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,15 +77,22 @@ const FindAll = (props) => {
                         bookList.map((book, index) => (
                             <tr key={index}>
                                 <td style={{ textAlign: "left" }}>{book.title}</td>
-                                <td style={{ textAlign: "left" }}><img style={{width:'50px'}} src={book.imageUrl} alt=""></img></td>
+                                {/* <td style={{ textAlign: "left" }}><img style={{width:'50px'}} src={book.imageUrl} alt=""></img></td>
                                 <td style={{ textAlign: "left" }}>{book.authorName}</td>
-                                <td style={{ textAlign: "left" }}>{book.genre}</td>
+                                <td style={{ textAlign: "left" }}>{book.genre}</td> */}
                                 <td style={{ textAlign: "left" }}>{book.year}</td>
-                                <td style={{ textAlign: "left" }}>{book.pages}</td>
+                                {/* <td style={{ textAlign: "left" }}>{book.pages}</td>
                                 <td style={{ textAlign: "left" }}>{book.description}</td>
-                                <td style={{ textAlign: "left" }}>{book.likes}</td>
+                                <td style={{ textAlign: "left" }}>{book.likes}</td> */}
                                 <td>
                                     <button
+                                        onClick={() => {
+                                            navigate(`/details/${book._id}`);
+                                        }}
+                                    >
+                                        Details
+                                    </button>
+                                    {/* <button
                                         className="edit-button-style"
                                         onClick={() => {
                                             navigate(`/edit/${book._id}`);
@@ -94,13 +107,15 @@ const FindAll = (props) => {
                                         }
                                     >
                                         Delete
-                                    </button>
+                                    </button> */}
                                 </td>
                             </tr>
                         ))
                         : null}
                 </tbody>
             </table>
+            <p><button>Make Book Sugestions</button></p>
+        </div>
         </div>
     );
 };
