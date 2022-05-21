@@ -3,6 +3,7 @@ import "./App.css";
 // import Main from "./views/Main";
 // import Home from "./components/Home";
 import FindOne from "./components/FindOne";
+import Comment from "./components/Comments"
 import FindAll from "./components/FindAll";
 // import SuggestOne from "./components/SuggestOne";
 // import ChangeOne from "./components/ChangeOne";
@@ -20,7 +21,8 @@ function App() {
 \                    {/* <Route path="/suggest" element={<SuggestOne />} /> */}
                     {/* <Route path="/edit/:id" element={<ChangeOne />} /> */}
                     {/* <Route path="/error" element={<Error />} /> */}
-                </Routes>
+                    <Route path="/comments/book/:id" element={<Comment />} />
+                    </Routes>
             </div>
         </BrowserRouter>
     );

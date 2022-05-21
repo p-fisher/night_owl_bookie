@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FindOne from "../components/FindOne";
-import FindAll from "../components/FindAll";
+import FindAll from "../components/Comments";
 
 const Book_Comment = (props) => {
     //We make sure our state is lifted so that both children components can have access to our getter and setter
@@ -17,7 +17,7 @@ const Book_Comment = (props) => {
                 setBookList={setBookList}
             />
 
-            <FindAll
+            <Comments
                 bookList={bookList}
                 setBookList={setBookList}
             />
