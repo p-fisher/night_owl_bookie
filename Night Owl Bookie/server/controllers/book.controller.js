@@ -3,7 +3,7 @@ const Book = require("../models/book.model");
 // When calling from front end, make sure to pay attention on the camel-cases! below comments should help out.
 
 module.exports.findAllBooks = (req, res) => {
-    Book.find()
+    Book.find({}) // added curley braces, a convention picked up during MERN stack
         .then(findAllBooks => {
             console.log(findAllBooks)
             res.json({Books: findAllBooks}) // response.data.Books is how you want to get the data
