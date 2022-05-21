@@ -71,7 +71,7 @@ const FindAll = (props) => {
                         bookList.map((book, index) => (
                             <tr key={index}>
                                 <td style={{ textAlign: "left" }}>{book.title}</td>
-                                <td style={{ textAlign: "left" }}><img stylesrc={book.imageUrl} alt=""></img></td>
+                                <td style={{ textAlign: "left" }}><img style={{width:'50px'}} src={book.imageUrl} alt=""></img></td>
                                 <td style={{ textAlign: "left" }}>{book.authorName}</td>
                                 <td style={{ textAlign: "left" }}>{book.genre}</td>
                                 <td style={{ textAlign: "left" }}>{book.year}</td>
