@@ -16,8 +16,9 @@ const FindAll = (props) => {
             .get("http://localhost:8000/api/books")
             .then((res) => {
                 // console.log(res);
-                console.log(res.data);
+                // console.log(res.data);
                 setBookList(res.data);
+                console.log(bookList);
             })
             .catch((err) => console.log(err));
     }, []);

@@ -16,7 +16,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<FindAll />} />
                     {/* <Route path="/create" element={<CreateNew />} /> */}
-                    <Route path="/details" element={<FindOne />} />
+                    <Route path="/details/:id" element={<FindOne />} />
                     <Route path="/list_all" element={<FindAll />} />
 \                    {/* <Route path="/suggest" element={<SuggestOne />} /> */}
                     {/* <Route path="/edit/:id" element={<ChangeOne />} /> */}
