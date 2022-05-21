@@ -3,21 +3,19 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 
-const FindAll = (props) => {
-    const { bookList, setBookList } = props;
-    const navigate = useNavigate();
-
 // const FindAll = (props) => {
-//     const [bookList, setBookList] = useState([]);
+//     const { bookList, setBookList } = props;
 //     const navigate = useNavigate();
+
+const FindAll = (props) => {
+    const [bookList, setBookList] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios
             .get("http://localhost:8000/api/books")
             .then((res) => {
-                // console.log(res);
-                // console.log(res.data);
-                setBookList(res.data);
+                setBookList(res.data.Books);
                 console.log(bookList);
             })
             .catch((err) => console.log(err));
@@ -57,6 +55,14 @@ const FindAll = (props) => {
                 <thead>
                     <tr>
                         <th>Book Title</th>
+                        <th>Image</th>
+                        <th>Author</th>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Published</th>
+                        <th>Length</th>
+                        <th>Description</th>
+                        <th>Likes</th>
                         {/* <th>Action Available</th> */}
                     </tr>
                 </thead>
@@ -65,9 +71,14 @@ const FindAll = (props) => {
                         ? // iterate bookList
                         bookList.map((book, index) => (
                             <tr key={index}>
-                                <td style={{ textAlign: "left" }}>
-                                    {book.title}
-                                </td>
+                                <td style={{ textAlign: "left" }}>{book.title}</td>
+                                <td style={{ textAlign: "left" }}>{book.imageUrl}</td>
+                                <td style={{ textAlign: "left" }}>{book.authorName}</td>
+                                <td style={{ textAlign: "left" }}>{book.genre}</td>
+                                <td style={{ textAlign: "left" }}>{book.year}</td>
+                                <td style={{ textAlign: "left" }}>{book.pages}</td>
+                                <td style={{ textAlign: "left" }}>{book.description}</td>
+                                <td style={{ textAlign: "left" }}>{book.likes}</td>
                                 {/* <td>
                                     <button
                                         className="edit-button-style"
