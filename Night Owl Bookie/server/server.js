@@ -8,6 +8,7 @@ app.use(express.urlencoded({extended:true}));
 
 require('./config/mongoose.config.js');
 require('./routes/book.routes')(app)
+require('./routes/comment.routes')(app)
 
 const port = 8000;
 

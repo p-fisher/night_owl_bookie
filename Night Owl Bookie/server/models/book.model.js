@@ -27,7 +27,7 @@ const BookSchema = new mongoose.Schema({
             'Historical',
             "Nonfiction",
             'Fiction'],
-        required : [true, "Genre required"] 
+        required : [true, "Genre required"]
     },
     year: { /*publication year */
         type: Number,
