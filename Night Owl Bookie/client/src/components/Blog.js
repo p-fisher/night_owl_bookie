@@ -7,7 +7,7 @@ import "../App.css";
 //     const { commentList, setCommentList } = props;
 //     const navigate = useNavigate();
 
-const FindAll = (props) => {
+const FindAllComments = (props) => {
     // const [commentList, setCommentList] = useState([]);
     const [commentList, setCommentList] = useState([]);
     const navigate = useNavigate();
@@ -22,24 +22,24 @@ const FindAll = (props) => {
             .catch((err) => console.log(err));
     }, []);
 
-    const deleteFilter = (idFromBelow) => {
-        axios
-            .delete(`http://localhost:8000/api/comments/${idFromBelow}`)
-            .then((res) => {
-                console.log(res.data);
-                setCommentList(
-                    commentList.filter((comment) => comment._id !== idFromBelow)
-                );
-            })
-            // const newList = commentList.filter(
-            //     (comment, index) => comment._id !== idFromBelow
-            // );
-            // setCommentList(newList);
-            // })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+    // const deleteFilter = (idFromBelow) => {
+    //     axios
+    //         .delete(`http://localhost:8000/api/comments/${idFromBelow}`)
+    //         .then((res) => {
+    //             console.log(res.data);
+    //             setCommentList(
+    //                 commentList.filter((comment) => comment._id !== idFromBelow)
+    //             );
+    //         })
+    //         // const newList = commentList.filter(
+    //         //     (comment, index) => comment._id !== idFromBelow
+    //         // );
+    //         // setCommentList(newList);
+    //         // })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // };
 
 // NEED A POST
 
@@ -47,14 +47,15 @@ const FindAll = (props) => {
 
     return (
         <div>
-        <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Commentie&nbsp;&nbsp;<button onClick={() => {
-                                            navigate(`/`);
-                                        }}
-                                    >Home</button></div>
+        <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Bookie&nbsp;&nbsp;<button onClick={() => {
+                        navigate(`/`);
+                        }}
+                        >Home</button></div>
         <div style={{marginTop: '20px'}}>
-        {/* <div> */}
-        {/* <div> */}
-
         <h1>Blog</h1>
         </div>
         </div>
+        );
+        };
+        
+        export default FindAllComments;

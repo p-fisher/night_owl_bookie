@@ -114,7 +114,11 @@ const FindAllBooks = (props) => {
                         : null}
                 </tbody>
             </table>
-            <p><button>Go to Blog</button></p>
+            <p><button 
+                                        onClick={() => {
+                                            navigate(`/comments/list_all`);
+                                        }}
+                                    >Go to Blog</button></p>
         </div>
         </div>
     );
