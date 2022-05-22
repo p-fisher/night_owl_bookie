@@ -22,7 +22,7 @@ function Home() {
                 </button>
                 <button className="BS-home">
                     <Link to={""} className="link">
-                    BOOK SUGGESTIONS
+                    GO TO BLOG
                     </Link>
                 </button>
             </div>
