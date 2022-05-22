@@ -11,9 +11,9 @@ const CommentSchema = new mongoose.Schema({
         type: String,
         required: [true, "Text required"]
     },
-    createdDate: {
+    createdDate: {  
         type: Date
-    },
+    }, 
     isSuggestion:{
         type: Boolean
     }
