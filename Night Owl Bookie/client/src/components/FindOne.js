@@ -44,6 +44,9 @@ const FindOne = (props) => {
                                             navigate(`/`);
                                         }}
                                     >Home</button></div>
+
+        <h1>Book Details</h1>
+
         <div style={{marginTop: '20px'}}>
             <h2>{oneBook.title}</h2>
             <p><img style={{width:'300px'}} src={oneBook.imageUrl} alt=""></img></p>
