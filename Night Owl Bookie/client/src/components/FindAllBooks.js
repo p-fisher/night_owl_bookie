@@ -7,7 +7,7 @@ import "../App.css";
 //     const { bookList, setBookList } = props;
 //     const navigate = useNavigate();
 
-const FindAll = (props) => {
+const FindAllBooks = (props) => {
     // const [bookList, setBookList] = useState([]);
     const [bookList, setBookList] = useState([]);
     const navigate = useNavigate();
@@ -120,4 +120,4 @@ const FindAll = (props) => {
     );
 };
 
-export default FindAll;
+export default FindAllBooks;

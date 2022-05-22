@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 
-const FindOne = (props) => {
+const FindOneBook = (props) => {
     const { id } = useParams();
     const navigate = useNavigate();
     // const [oneBook, setOneBook] = useState({});
@@ -63,4 +63,4 @@ const FindOne = (props) => {
     );
 };
 
-export default FindOne;
+export default FindOneBook;
