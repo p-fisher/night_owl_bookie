@@ -7,7 +7,7 @@ import "../App.css";
 //     const { bookList, setBookList } = props;
 //     const navigate = useNavigate();
 
-const FindAll = (props) => {
+const FindAllBooks = (props) => {
     // const [bookList, setBookList] = useState([]);
     const [bookList, setBookList] = useState([]);
     const navigate = useNavigate();
@@ -114,10 +114,10 @@ const FindAll = (props) => {
                         : null}
                 </tbody>
             </table>
-            <p><button>Make Book Sugestions</button></p>
+            <p><button>Go to Blog</button></p>
         </div>
         </div>
     );
 };
 
-export default FindAll;
+export default FindAllBooks;

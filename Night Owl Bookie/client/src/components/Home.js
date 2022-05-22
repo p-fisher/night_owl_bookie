@@ -16,7 +16,7 @@ function Home() {
             </div>
             <div className="home-buttons-container">
                 <button className="BOTM-home">
-                    <Link to={"/list_all"} className="link">
+                    <Link to={"/books/list_all"} className="link">
                     BOOKS OF THE MONTH
                     </Link>
                 </button>
