@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 
-const FindOne = (props) => {
+const FindOneBook = (props) => {
     const { id } = useParams();
     const navigate = useNavigate();
     // const [oneBook, setOneBook] = useState({});
@@ -57,10 +57,14 @@ const FindOne = (props) => {
             <p>Book Length: {oneBook.pages}</p>
             <p>Description: {oneBook.description}</p>
             <p>Likes: {oneBook.likes}</p>
-            <button onClick={deleteHandler}>Delete</button>
+            <p><button 
+                                        onClick={() => {
+                                            navigate(`/comments/list_all`);
+                                        }}
+                                    >Go to Blog</button></p>
         </div>
         </div>
     );
 };
 
-export default FindOne;
+export default FindOneBook;

@@ -16,13 +16,13 @@ function Home() {
             </div>
             <div className="home-buttons-container">
                 <button className="BOTM-home">
-                    <Link to={"/list_all"} className="link">
+                    <Link to={"/books/list_all"} className="link">
                     BOOKS OF THE MONTH
                     </Link>
                 </button>
                 <button className="BS-home">
                     <Link to={""} className="link">
-                    BOOK SUGGESTIONS
+                    GO TO BLOG
                     </Link>
                 </button>
             </div>
