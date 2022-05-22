@@ -15,7 +15,8 @@ const CommentSchema = new mongoose.Schema({
         type: Date
     }, 
     isSuggestion:{
-        type: Boolean
+        type: Boolean,
+        default: false
     }
     // likes: { // Optional
     //     type: Number
