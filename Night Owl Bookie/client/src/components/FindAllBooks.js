@@ -87,7 +87,7 @@ const FindAllBooks = (props) => {
                                 <td>
                                     <button
                                         onClick={() => {
-                                            navigate(`/details/${book._id}`);
+                                            navigate(`/books/details/${book._id}`);
                                         }}
                                     >
                                         Details

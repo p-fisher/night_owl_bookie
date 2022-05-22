@@ -41,6 +41,10 @@ const FindAll = (props) => {
             });
     };
 
+// NEED A POST
+
+// NEED A PUT
+
     return (
         <div>
         <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Commentie&nbsp;&nbsp;<button onClick={() => {
