@@ -114,7 +114,7 @@ const FindAll = (props) => {
                         : null}
                 </tbody>
             </table>
-            <p><button>Make Book Sugestions</button></p>
+            <p><button>Go to Blog</button></p>
         </div>
         </div>
     );

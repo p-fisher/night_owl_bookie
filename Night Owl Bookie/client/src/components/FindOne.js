@@ -57,7 +57,7 @@ const FindOne = (props) => {
             <p>Book Length: {oneBook.pages}</p>
             <p>Description: {oneBook.description}</p>
             <p>Likes: {oneBook.likes}</p>
-            <button onClick={deleteHandler}>Delete</button>
+            <p><button>Go to Blog</button></p>
         </div>
         </div>
     );
