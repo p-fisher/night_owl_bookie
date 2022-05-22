@@ -1,9 +1,8 @@
 import "./App.css";
 
-// import Main from "./views/Main";
 import Home from "./components/Home";
 import FindOneBook from "./components/FindOneBook";
-// import Comment from "./components/Blog"
+import FindAllComments from "./components/Blog"
 import FindAllBooks from "./components/FindAllBooks";
 // import ChangeOne from "./components/ChangeOne";
 // import Error from "./components/Error";
@@ -17,6 +16,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/books/details/:id" element={<FindOneBook />} />
                     <Route path="/books/list_all" element={<FindAllBooks />} />
+                    <Route path="/comments/list_all" element={<FindAllComments />} />
                     {/* <Route path="/edit/:id" element={<ChangeOne />} /> */}
                     {/* <Route path="/error" element={<Error />} /> */}
                     {/* <Route path="/comments/book/:id" element={<Comment />} /> */}
