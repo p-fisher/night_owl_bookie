@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
+import barlogo from "./NOB-bar-logo-transp.png";
+
 
 // const FindAll = (props) => {
 //     const { bookList, setBookList } = props;
@@ -43,10 +45,19 @@ const FindAllBooks = (props) => {
 
     return (
         <div>
-        <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Bookie&nbsp;&nbsp;<button onClick={() => {
+        {/* <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Bookie&nbsp;&nbsp;<button onClick={() => {
+                                            navigate(`/`);
+                                        }}
+                                    >Home</button></div> */}
+        <div class="int_topbar">
+            <div class="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
+                <div class="int_topbar_head">NIGHT OWL BOOKIE</div>
+                <div><button id="int_topbar_button" onClick={() => {
                                             navigate(`/`);
                                         }}
                                     >Home</button></div>
+                                    </div>
+                                    </div>
         <div style={{marginTop: '20px'}}>
         {/* <div> */}
         {/* <div> */}
@@ -116,7 +127,7 @@ const FindAllBooks = (props) => {
             </table>
             <p><button 
                                         onClick={() => {
-                                            navigate(`/comments/list_all`);
+                                            navigate(`/comments/list_add`);
                                         }}
                                     >Go to Blog</button></p>
         </div>
