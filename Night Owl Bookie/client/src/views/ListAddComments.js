@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CreateNewComment from "../components/CreateComment"
 // import FindOne from "../components/FindOne";
 // import FindAllComments from "../components/_____Comments";

@@ -61,7 +61,10 @@ const FindOneBook = (props) => {
                                         onClick={() => {
                                             navigate(`/comments/list_add`);
                                         }}
-                                    >Go to Blog</button></p>
+                                    >GO TO BLOG</button></p>
+                <button onClick={()=>{navigate(`/books/list_all`)}}>
+                    BACK TO BOOKS OF THE MONTH
+                </button>
         </div>
         </div>
     );
