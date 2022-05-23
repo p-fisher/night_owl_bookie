@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CreateNewComment from "../components/CreateComment"
+import CreateNewComment from "../components/CreateComment";
+import EditComment from "../components/EditComment";
 import barlogo from "../components/NOB-bar-logo-transp.png";
 
 // import FindOne from "../components/FindOne";
@@ -11,6 +12,10 @@ const ListAddComments = (props) => {
     //That way an update that happens in CreateProduct can be reflected in DisplayAll
     // const [bookList, setBookList] = useState([]);
     const [newComment, setNewComment] = useState([]);
+    const [nickname, setNickname] = useState([]);
+    const [comment, setComment] = useState([]);
+    const [isSuggestion, setIsSuggestion] = useState(false);
+
     const navigate = useNavigate();
 
 
@@ -36,10 +41,14 @@ const ListAddComments = (props) => {
             {/* We pass down the getter/setter via props obj, with a key of productList and a value of (the getter itself) productList. 
                 You can name the key whatever you want, but this naming convention allows for less confusion and easy usage
                 (see deconstructuring/usage in Child components)*/}
-            {/* <FindOne
-                bookList={bookList}
-                setBookList={setBookList}
-            /> */}
+            <EditComment
+                nickname={nickname}
+                setNickname={setNickname}
+                comment={comment}
+                setComment={setComment}
+                isSuggestion={isSuggestion}
+                setIsSuggestion={setIsSuggestion}
+            />
 
             <CreateNewComment
                 newComment={newComment}

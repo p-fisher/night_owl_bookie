@@ -13,7 +13,7 @@ const FindAllComments = () => {
             .then((response) => { // i like to spell out response 
                 console.log(response);
                 console.log(response.data);
-                setListAllComments(response.data); //set the response information from the request in the listall setter
+                setListAllComments(response.data.Comments); //set the response information from the request in the listall setter
             })
             .catch((error) => {
                 console.log(error); //i like to spell our error
@@ -34,14 +34,14 @@ const FindAllComments = () => {
     }
     return(
         <div>
-            <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
+            {/* <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
                 Night Owl Bookie&nbsp;&nbsp;
                 <button onClick={() => {navigate(`/`)}}>
                     Home
                 </button>    
-            </div>
+            </div> */}
             <div style={{marginTop: '20px'}}>
-                <h1>Blog</h1>
+                <h1>List All Comments</h1>
             </div>
             <div className="all-comments-container">
             <table className="all-comments-table">
@@ -56,7 +56,7 @@ const FindAllComments = () => {
                     <tbody>
                         {
                             listAllComments ? //shorter if statement
-                            listAllComments.map((blogComment, index) => ( 
+                            listAllComments.map((blogComment,index) => ( 
                                 <tr key={index}> 
                                     <td>{blogComment.nickname}</td>
                                     <td>{blogComment.comment}</td>

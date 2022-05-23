@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import {useNavigate } from "react-router-dom"
 
 
-const EditComment = () => {
+const EditComment = (props) => {
 
     const {id} = useParams();
     const navigate = useNavigate();
@@ -45,12 +45,12 @@ const EditComment = () => {
     }
     return(
         <div>
-            <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
+            {/* <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
                 Night Owl Bookie&nbsp;&nbsp;
                 <button onClick={() => {navigate(`/`)}}>
                     Home
                 </button>    
-            </div>
+            </div> */}
             <div style={{marginTop: '20px'}}>
                 <h1>Edit your comment</h1>
             </div>

@@ -2,7 +2,7 @@ import "./App.css";
 
 import Home from "./components/Home";
 import FindOneBook from "./components/FindOneBook";
-import FindAllComments from "./components/Blog"
+import FindAllComments from "./components/FindAllComments"
 import FindAllBooks from "./components/FindAllBooks";
 import CreateNewComment from "./components/CreateComment";
 import ListAddComments from "./views/ListAddComments";
