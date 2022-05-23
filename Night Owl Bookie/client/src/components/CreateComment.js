@@ -39,7 +39,7 @@ const CreateNewComment = (props) => {
             {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
                 <header>
                     <h1>Add a Comment</h1>
-                    <p><button  onClick={(e) => navigate("/")}>Home</button></p>
+                    {/* <p><button  onClick={(e) => navigate("/")}>Home</button></p> */}
                     {/* <Link to={"/"}>Home</Link> */}
                 </header>
 
