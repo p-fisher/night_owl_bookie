@@ -34,6 +34,7 @@ const CreateNewComment = (props) => {
 
     return (
         <div>
+            <div style={{width: '500px',height: '200px', margin: '0 auto', backgroundColor: 'lightgray', lineHeight: '200px'}}>(the list all comments content goes here)</div>
             <form onSubmit={submitHandler}>
             {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
                 <header>
