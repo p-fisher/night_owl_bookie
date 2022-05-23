@@ -38,30 +38,33 @@ const CreateNewComment = (props) => {
             {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
                 <header>
                     <h1>Add a Comment</h1>
-                    <Link to={"/"}>Home</Link>
+                    <p><button  onClick={(e) => navigate("/")}>Home</button></p>
+                    {/* <Link to={"/"}>Home</Link> */}
                 </header>
 
+                <div>
                 <label>Your Nickname:</label>
                 {/* check component - in browser should change with each letter +/-  */}
                 <input
                     onChange={(e) => setNickname(e.target.value)}
                     name="nickname"
                     value={nickname}
-                />
-
+                /></div>
+                
+                <div>
                 <label>Comment:</label>
                 {/* check component - in browser should change with each letter +/-  */}
-                <input
+                <textarea
                     onChange={(e) => setComment(e.target.value)}
                     name="comment"
                     value={comment}
-                />
+                /></div>
                 {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
                 {errors.nickname ? <span>{errors.nickname.message}</span> : null}
                 {errors.comment ? <span>{errors.comment.message}</span> : null}
-                <button>Submit</button>
+                <div><p><button>Submit</button>
                 {/* When this button is clicked, navigate back to "/" route */}
-                <button onClick={(e) => navigate("/")}>Cancel</button>
+                <button onClick={(e) => navigate("/")}>Cancel</button></p></div>
             </form>
         </div>
     );
