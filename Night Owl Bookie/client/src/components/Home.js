@@ -21,7 +21,7 @@ function Home() {
                     </Link>
                 </button>
                 <button className="BS-home">
-                    <Link to={""} className="link">
+                    <Link to={"/comments/list_add"} className="link">
                     GO TO BLOG
                     </Link>
                 </button>

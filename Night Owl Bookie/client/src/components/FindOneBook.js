@@ -59,7 +59,7 @@ const FindOneBook = (props) => {
             <p>Likes: {oneBook.likes}</p>
             <p><button 
                                         onClick={() => {
-                                            navigate(`/comments/list_all`);
+                                            navigate(`/comments/list_add`);
                                         }}
                                     >Go to Blog</button></p>
         </div>
