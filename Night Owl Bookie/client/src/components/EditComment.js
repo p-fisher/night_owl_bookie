@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import React, {useState, useEffect} from "react";
-import {useNavigate } from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import barlogo from "./NOB-bar-logo-transp.png";
 
 
-const EditComment = () => {
+
+const EditComment = (props) => {
 
     const {id} = useParams();
     const navigate = useNavigate();
@@ -18,9 +20,9 @@ const EditComment = () => {
             .then((response) => { // i like to spell out response 
                 console.log(response);
                 console.log(response.data);
-                setNickname(response.data.nickname);
-                setComment(response.data.comment);
-                setIsSuggestion(response.data.isSuggestion);
+                setNickname(response.data.Comment.nickname);
+                setComment(response.data.Comment.comment);
+                setIsSuggestion(response.data.Comment.isSuggestion);
             })
             .catch((error) => {
                 console.log(error); 
@@ -28,6 +30,7 @@ const EditComment = () => {
     }, [id]);
 
     const updateHandler = (event) => {
+        event.preventDefault();
         axios.put(`http://localhost:8000/api/comments/${id}`, {
             nickname,
             comment,
@@ -36,7 +39,7 @@ const EditComment = () => {
         .then((response) => {
             console.log(response);
             console.log(response.data);
-            navigate(`/comments/list_all`);
+            navigate(`/comments/list_add`);
         })
             .catch((error) => {
                 console.log(error);
@@ -45,12 +48,21 @@ const EditComment = () => {
     }
     return(
         <div>
-            <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
+            {/* <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
                 Night Owl Bookie&nbsp;&nbsp;
                 <button onClick={() => {navigate(`/`)}}>
                     Home
                 </button>    
-            </div>
+            </div> */}
+        <div class="int_topbar">
+            <div class="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
+                <div class="int_topbar_head">NIGHT OWL BOOKIE</div>
+                <div><button id="int_topbar_button" onClick={() => {
+                                            navigate(`/`);
+                                        }}
+                                    >Home</button></div>
+                                    </div>
+                                    </div>
             <div style={{marginTop: '20px'}}>
                 <h1>Edit your comment</h1>
             </div>
@@ -63,7 +75,7 @@ const EditComment = () => {
                         onChange={(event) => setNickname(event.target.value)}
                     />
                     <p>Comment:</p>
-                    <input
+                    <textarea style={{width: '400px', height: '250px'}}
                         value={comment}
                         type="text"
                         onChange={(event) => setComment(event.target.value)}
