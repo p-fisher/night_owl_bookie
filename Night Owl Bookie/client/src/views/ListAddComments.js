@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateNewComment from "../components/CreateComment";
 import EditComment from "../components/EditComment";
+import FindAllComments from "../components/FindAllComments";
 import barlogo from "../components/NOB-bar-logo-transp.png";
 
 // import FindOne from "../components/FindOne";
@@ -41,6 +42,16 @@ const ListAddComments = (props) => {
             {/* We pass down the getter/setter via props obj, with a key of productList and a value of (the getter itself) productList. 
                 You can name the key whatever you want, but this naming convention allows for less confusion and easy usage
                 (see deconstructuring/usage in Child components)*/}
+
+            <FindAllComments
+                nickname={nickname}
+                setNickname={setNickname}
+                comment={comment}
+                setComment={setComment}
+                isSuggestion={isSuggestion}
+                setIsSuggestion={setIsSuggestion}
+            />
+{/* 
             <EditComment
                 nickname={nickname}
                 setNickname={setNickname}
@@ -49,7 +60,7 @@ const ListAddComments = (props) => {
                 isSuggestion={isSuggestion}
                 setIsSuggestion={setIsSuggestion}
             />
-
+ */}
             <CreateNewComment
                 newComment={newComment}
                 setNewComment={setNewComment}

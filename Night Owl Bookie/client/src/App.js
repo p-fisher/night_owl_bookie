@@ -6,6 +6,7 @@ import FindAllComments from "./components/FindAllComments"
 import FindAllBooks from "./components/FindAllBooks";
 import CreateNewComment from "./components/CreateComment";
 import ListAddComments from "./views/ListAddComments";
+import EditComment from "./components/EditComment";
 // import Error from "./components/Error";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -20,9 +21,7 @@ function App() {
                     <Route path="/comments/list_all" element={<FindAllComments />} />
                     <Route path="/comments/create" element={<CreateNewComment />} />
                     <Route path="/comments/list_add" element={<ListAddComments />} />
-                    {/* <Route path="/edit/:id" element={<ChangeOne />} /> */}
-                    {/* <Route path="/error" element={<Error />} /> */}
-                    {/* <Route path="/comments/book/:id" element={<Comment />} /> */}
+                    <Route path="/comments/edit/:id" element={<EditComment />} />
                     </Routes>
             </div>
         </BrowserRouter>
