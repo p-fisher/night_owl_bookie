@@ -116,7 +116,7 @@ const FindAllBooks = (props) => {
             </table>
             <p><button 
                                         onClick={() => {
-                                            navigate(`/comments/list_all`);
+                                            navigate(`/comments/list_add`);
                                         }}
                                     >Go to Blog</button></p>
         </div>
