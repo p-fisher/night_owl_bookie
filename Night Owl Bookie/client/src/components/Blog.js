@@ -1,61 +1,84 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import "../App.css";
+import React, {useState, useEffect} from "react";
+import {useNavigate } from "react-router-dom";
 
-// const FindAll = (props) => {
-//     const { commentList, setCommentList } = props;
-//     const navigate = useNavigate();
 
-const FindAllComments = (props) => {
-    // const [commentList, setCommentList] = useState([]);
-    const [commentList, setCommentList] = useState([]);
+const FindAllComments = () => {
+
+    const [listAllComments, setListAllComments] = useState([]); //useState to hold all comments
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios
-            .get("http://localhost:8000/api/comments")
-            .then((res) => {
-                setCommentList(res.data.Comments);
-                console.log(commentList);
+        axios.get("http://localhost:8000/api/comments") //get comments from the db route | GET request
+            .then((response) => { // i like to spell out response 
+                console.log(response);
+                console.log(response.data);
+                setListAllComments(response.data); //set the response information from the request in the listall setter
             })
-            .catch((err) => console.log(err));
-    }, []);
+            .catch((error) => {
+                console.log(error); //i like to spell our error
+            })
+    }, [])
 
-    // const deleteFilter = (idFromBelow) => {
-    //     axios
-    //         .delete(`http://localhost:8000/api/comments/${idFromBelow}`)
-    //         .then((res) => {
-    //             console.log(res.data);
-    //             setCommentList(
-    //                 commentList.filter((comment) => comment._id !== idFromBelow)
-    //             );
-    //         })
-    //         // const newList = commentList.filter(
-    //         //     (comment, index) => comment._id !== idFromBelow
-    //         // );
-    //         // setCommentList(newList);
-    //         // })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
-
-// NEED A POST
-
-// NEED A PUT
-
-    return (
+    const deleteHandler = (id) => {
+        axios.delete(`http://localhost:8000/api/comments/${id}`) 
+            .then((response) => {
+                console.log(response);
+                console.log(response.data);
+                setListAllComments(listAllComments.filter((blogComment) => blogComment._id !== id))
+                navigate("/comments/list_all"); //here so page is refreshed and you can see comment is gone
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+    return(
         <div>
-        <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>Night Owl Bookie&nbsp;&nbsp;<button onClick={() => {
-                        navigate(`/`);
-                        }}
-                        >Home</button></div>
-        <div style={{marginTop: '20px'}}>
-        <h1>Blog</h1>
+            <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
+                Night Owl Bookie&nbsp;&nbsp;
+                <button onClick={() => {navigate(`/`)}}>
+                    Home
+                </button>    
+            </div>
+            <div style={{marginTop: '20px'}}>
+                <h1>Blog</h1>
+            </div>
+            <div className="all-comments-container">
+            <table className="all-comments-table">
+                    <thead className="table-head">
+                        <tr className="table-row">
+                            <th>Nickname</th> 
+                            <th>Comment</th>
+                            <th>Suggestion?</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            listAllComments ? //shorter if statement
+                            listAllComments.map((blogComment, index) => ( 
+                                <tr key={index}> 
+                                    <td>{blogComment.nickname}</td>
+                                    <td>{blogComment.comment}</td>
+                                    <td>{blogComment.isSuggestion ? <span>This is a suggestion comment</span> : null }</td>
+                                    <td>
+                                        <button onClick={()=> {navigate(``)}}>
+                                            Edit
+                                        </button>
+                                        <button onClick={() => deleteHandler(blogComment._id) }>
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))
+                            :null //else: null; if it isn't there it's fine
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
-        </div>
-        );
-        };
         
-        export default FindAllComments;
+    )
+}
+
+export default FindAllComments;
