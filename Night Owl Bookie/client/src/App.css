@@ -115,8 +115,9 @@
 }
 #int_topbar_button {
 margin: 0 30px 0 550px;
-height: 27px;
+height: 30px;
 font-size: 1.25em;
+font-weight: 700;
 /* background-color: white;
 color: black */
 }
