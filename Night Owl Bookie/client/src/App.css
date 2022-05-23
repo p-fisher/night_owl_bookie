@@ -36,10 +36,14 @@
   background-color: black;
 }
 
+/* PF: added opacity, font color, and font weight */
 .about-us-section{
   background-color: black;
+  opacity: 65%;
   padding-bottom: 5%;
   padding-top: 1%;
+  color: #f249ca;
+  font-weight: 600;
 }
 
 .home-buttons-container {
@@ -73,4 +77,41 @@
 
 .home-p {
   font-size: large;
+}
+
+/* PF added interior pages' top bar */
+.int_topbar {
+  width: 1000px;
+  height: 72px;
+  line-height: 72px;
+  margin: 0 auto;
+  background-color: black;
+}
+.int_topbar_nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.int_topbar_head {
+  /* width: 80%; */
+  color: #f249ca;
+  font-size: 2em;
+  font-weight: 700;
+  /* text-shadow: 0px 0px 3px #f249ca, 0px 0px 4px white; */
+  text-shadow: 0px 0px 8px #f249ca;
+  /* font-stretch: ultra-condensed; */
+  /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#int_topbar_logo {
+  height: 60px;
+  margin-left: 30px;
+}
+#int_topbar_button {
+margin: 0 30px 0 550px;
+height: 27px;
+font-size: 1.25em;
+/* background-color: white;
+color: black */
 }
