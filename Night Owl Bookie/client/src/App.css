@@ -85,7 +85,11 @@
   height: 72px;
   line-height: 72px;
   margin: 0 auto;
-  background-color: black;
+  /* background-color: black; */
+  background-image: url('./components/bar-sky-stars-pattern.png');
+  background-size: cover;
+  background-position: -200px 0;
+  
 }
 .int_topbar_nav{
   width: 100%;
