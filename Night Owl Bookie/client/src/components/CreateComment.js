@@ -3,22 +3,26 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const CreateNewComment = (props) => {
+    const navigate = useNavigate();
     const [errors, setErrors] = useState({});
     const [comment, setComment] = useState("");
     const [nickname, setNickname] = useState("");
+    const [isSuggestion, setIsSuggestion] = useState(false);
 
-    const navigate = useNavigate();
 
     const submitHandler = (e) => {
         e.preventDefault();
         axios
         .post("http://localhost:8000/api/comments", {
-            nickname,comment
+            nickname,
+            comment,
+            isSuggestion
         })
         .then((res) => {
             console.log(res);
             console.log(res.data);
             if (res.data.createdComment) {
+                console.log("TEST");
                 navigate("/comments/list_add");
             } else {
                 setErrors(res.data.error.errors);
@@ -56,10 +60,16 @@ const CreateNewComment = (props) => {
                     name="comment"
                     value={comment}
                 /></div>
+                <label>Is this a book suggestion?</label>
+                <input
+                onChange={(e) => setIsSuggestion(e.target.checked)}
+                    checked= {isSuggestion}
+                    type= "checkbox"
+                />
                 {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
                 {errors.nickname ? <span>{errors.nickname.message}</span> : null}
                 {errors.comment ? <span>{errors.comment.message}</span> : null}
-                <div><p><button type="sumbit">Submit</button>
+                <div><p><button>Submit</button>
                 <button onClick={(e) => navigate("/")}>Cancel</button></p></div>
             </form>
         </div>
