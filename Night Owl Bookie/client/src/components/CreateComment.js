@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateNewComment = (props) => {
     const [errors, setErrors] = useState({});
@@ -10,19 +10,24 @@ const CreateNewComment = (props) => {
     const navigate = useNavigate();
 
     const submitHandler = (e) => {
-        // e.preventDefault();
-
+        e.preventDefault();
         axios
-            .post("http://localhost:8000/api/comments", {
-                nickname,comment
-            })
-            .then((res) => {
-                console.log(res);
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-                setErrors(err.response.data.errors);
+        .post("http://localhost:8000/api/comments", {
+            nickname,comment
+        })
+        .then((res) => {
+            console.log(res);
+            console.log(res.data);
+            if (res.data.createdComment) {
+                navigate("/comments/list_add");
+            } else {
+                setErrors(res.data.error.errors);
+            }
+            
+        })
+        .catch((err) => {
+            console.log(err);
+            // setErrors(err.response.data.error.errors);
             });
     };
 
@@ -32,8 +37,6 @@ const CreateNewComment = (props) => {
             {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
                 <header>
                     <h1>Add a Comment</h1>
-                    {/* <p><button  onClick={(e) => navigate("/")}>Home</button></p> */}
-                    {/* <Link to={"/"}>Home</Link> */}
                 </header>
 
                 <div>
