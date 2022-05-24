@@ -39,11 +39,12 @@
 /* PF: added opacity, font color, and font weight */
 .about-us-section{
   background-color: black;
-  opacity: 65%;
+  opacity: 70%;
   padding-bottom: 5%;
   padding-top: 1%;
-  /* color: #f249ca; */
   color: #fa78dc;
+  /* color: #f754d9; */
+  text-shadow: 0px 0px 30px #fa78dc;
   font-weight: 600;
 }
 
