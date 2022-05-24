@@ -84,6 +84,11 @@ const EditComment = (props) => {
                 <button className="confirm-changes-button" type="submit">
                     CONFIRM CHANGES
                 </button>
+                <button onClick={(event) => navigate(`/comments/list_add`)}>
+                    Cancel
+                </button>
+                {errors.nickname ? <span>{errors.nickname.message}</span> : null}
+                {errors.comment ? <span>{errors.comment.message}</span> : null}
             </form>
         </div>
         
