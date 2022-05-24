@@ -33,31 +33,31 @@ const FindAllComments = (props) => {
     }
     return(
         <div>
-            <div style={{marginTop: '20px'}}>
+            <div style={{marginTop: '40px'}}>
                 <h1>List All Comments</h1>
             </div>
             <div className="all-comments-container">
-            <table style={{width: '1000px', textAlign: 'left', margin: '0 auto'}}>
-                    <thead className="table-head">
+            <table style={{width: '1000px', border: '1px', textAlign: 'left', margin: '0 auto'}}>
+                    {/* <thead className="table-head">
                         <tr className="table-row">
-                            <th style = {{width: '10%'}}>Nickname</th> 
-                            <th style = {{width: '60%'}}>Comment</th>
+                            <th style = {{width: '20%'}}>Nickname</th> 
+                            <th style = {{width: '50%'}}>Comment</th>
                             <th style = {{width: '10%'}}>Suggestion?</th>
                             <th style = {{width: '20%'}}>Actions</th>
                         </tr>
-                    </thead>
+                    </thead> */}
                     <tbody>
                         {
                             listAllComments ? //shorter if statement
                             listAllComments.map((blogComment,index) => ( 
                                 <tr key={index}> 
-                                    <td>{blogComment.nickname}</td>
-                                    <td>{blogComment.comment}</td>
-                                    <td>{blogComment.isSuggestion ? <span>x</span> : null }</td>
-                                    <td>
+                                    <td style = {{width: '200px'}}>{blogComment.nickname}</td>
+                                    <td style = {{width: '600px'}}>{blogComment.comment}</td>
+                                    <td style = {{width: '50px'}}>{blogComment.isSuggestion ? <span>(Suggested)</span> : null }</td>
+                                    <td style = {{width: '150px', textAlign: 'right'}}>
                                         <button onClick={()=> {navigate(`/comments/edit/${blogComment._id}`)}}>
                                             Edit
-                                        </button>
+                                        </button>&nbsp;&nbsp;&nbsp;
                                         <button onClick={() => deleteHandler(blogComment._id) }>
                                             Delete
                                         </button>

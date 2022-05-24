@@ -74,16 +74,16 @@ const EditComment = (props) => {
                         type="text"
                         onChange={(event) => setComment(event.target.value)}
                     />
-                    <p>Is this a suggestion?</p>
+                    <p>Is this a suggestion?
                     <input
                         checked={isSuggestion}
                         type="checkbox"
                         onChange={(event) => setIsSuggestion(event.target.checked)}
-                    />
+                    /></p>
                 </div>
                 <button className="confirm-changes-button" type="submit">
                     CONFIRM CHANGES
-                </button>
+                </button>&nbsp;&nbsp;&nbsp;
                 <button onClick={(event) => navigate(`/comments/list_add`)}>
                     Cancel
                 </button>

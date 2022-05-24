@@ -36,11 +36,11 @@ const FindAllBooks = (props) => {
             <div>
             </div>
             <table style={{ margin: "auto", border: "1px solid black", width: "600px"}}>
-                <thead style={{backgroundColor: "grey", textAlign: "left"}}>
+                <thead style={{backgroundColor: "lightgrey", textAlign: "left"}}>
                     <tr>
                         <th>Book Title</th>
                         <th>Published</th>
-                        <th>Options</th>
+                        <th style={{textAlign: 'center'}}>Options</th>
                     </tr>
                 </thead>
                 <tbody>
