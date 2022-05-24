@@ -30,9 +30,10 @@ module.exports.createNewComment = (req, res) => {
             console.log(newlyCreatedComment)
             res.json({createdComment: newlyCreatedComment})
         })
-        .catch(err => {
+        .catch((err) => {
             console.log("newlyCreatedComment has failed")
-            res.status(400).json(err)
+           // res.json({message: `Something went wrong with creation`, error: err});
+            res.status(400).json(err) //previously commented
         });
 };
 

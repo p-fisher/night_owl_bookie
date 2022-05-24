@@ -48,12 +48,6 @@ const EditComment = (props) => {
     }
     return(
         <div>
-            {/* <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
-                Night Owl Bookie&nbsp;&nbsp;
-                <button onClick={() => {navigate(`/`)}}>
-                    Home
-                </button>    
-            </div> */}
         <div class="int_topbar">
             <div class="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
                 <div class="int_topbar_head">NIGHT OWL BOOKIE</div>
@@ -80,16 +74,21 @@ const EditComment = (props) => {
                         type="text"
                         onChange={(event) => setComment(event.target.value)}
                     />
-                    <p>Is this a suggestion?</p>
+                    <p>Is this a suggestion?
                     <input
                         checked={isSuggestion}
                         type="checkbox"
                         onChange={(event) => setIsSuggestion(event.target.checked)}
-                    />
+                    /></p>
                 </div>
                 <button className="confirm-changes-button" type="submit">
                     CONFIRM CHANGES
+                </button>&nbsp;&nbsp;&nbsp;
+                <button onClick={(event) => navigate(`/comments/list_add`)}>
+                    Cancel
                 </button>
+                {errors.nickname ? <span>{errors.nickname.message}</span> : null}
+                {errors.comment ? <span>{errors.comment.message}</span> : null}
             </form>
         </div>
         

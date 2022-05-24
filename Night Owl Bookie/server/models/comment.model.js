@@ -5,7 +5,7 @@ const CommentSchema = new mongoose.Schema({
         type: String,
         required: [true,'Nickname is required!'],
         minlength: [2,'Nickname must be at least 2 characters in length'],
-        // unique: [true,'Nickname must be unqiue']
+        // unique: [true,'Nickname must be unqiue'] backlog item
     },
     comment: {
         type: String,
