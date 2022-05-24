@@ -48,12 +48,6 @@ const EditComment = (props) => {
     }
     return(
         <div>
-            {/* <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
-                Night Owl Bookie&nbsp;&nbsp;
-                <button onClick={() => {navigate(`/`)}}>
-                    Home
-                </button>    
-            </div> */}
         <div class="int_topbar">
             <div class="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
                 <div class="int_topbar_head">NIGHT OWL BOOKIE</div>

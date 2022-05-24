@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateNewComment from "../components/CreateComment";
-import EditComment from "../components/EditComment";
 import FindAllComments from "../components/FindAllComments";
 import barlogo from "../components/NOB-bar-logo-transp.png";
 
@@ -27,9 +26,9 @@ const ListAddComments = (props) => {
                         }}
                         >Home</button></div> */}
 
-<div class="int_topbar">
-            <div class="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
-                <div class="int_topbar_head">NIGHT OWL BOOKIE</div>
+<div className="int_topbar">
+            <div className="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
+                <div className="int_topbar_head">NIGHT OWL BOOKIE</div>
                 <div><button id="int_topbar_button" onClick={() => {
                                             navigate(`/`);
                                         }}
@@ -51,16 +50,6 @@ const ListAddComments = (props) => {
                 isSuggestion={isSuggestion}
                 setIsSuggestion={setIsSuggestion}
             />
-{/* 
-            <EditComment
-                nickname={nickname}
-                setNickname={setNickname}
-                comment={comment}
-                setComment={setComment}
-                isSuggestion={isSuggestion}
-                setIsSuggestion={setIsSuggestion}
-            />
- */}
             <CreateNewComment
                 newComment={newComment}
                 setNewComment={setNewComment}

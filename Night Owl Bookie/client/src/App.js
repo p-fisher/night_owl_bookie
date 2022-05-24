@@ -7,7 +7,6 @@ import FindAllBooks from "./components/FindAllBooks";
 import CreateNewComment from "./components/CreateComment";
 import ListAddComments from "./views/ListAddComments";
 import EditComment from "./components/EditComment";
-// import Error from "./components/Error";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
