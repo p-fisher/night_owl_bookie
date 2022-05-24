@@ -33,34 +33,36 @@ const CreateNewComment = (props) => {
 
     return (
         <div>
+            <hr style={{marginTop: '40px', width: '1000px'}}></hr>
             <form onSubmit={submitHandler}>
             {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
-                <header>
+                <header style={{marginTop: '40px'}}>
                     <h1>Add a Comment</h1>
                 </header>
-
                 <div>
-                <label>Your Nickname:</label>
-                {/* check component - in browser should change with each letter +/-  */}
-                <input
-                    onChange={(e) => setNickname(e.target.value)}
-                    name="nickname"
-                    value={nickname}
-                /></div>
-                
-                <div>
-                <label>Comment:</label>
-                {/* check component - in browser should change with each letter +/-  */}
-                <textarea
-                    onChange={(e) => setComment(e.target.value)}
-                    name="comment"
-                    value={comment}
-                /></div>
-                {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
-                {errors.nickname ? <span>{errors.nickname.message}</span> : null}
-                {errors.comment ? <span>{errors.comment.message}</span> : null}
-                <div><p><button type="sumbit">Submit</button>
-                <button onClick={(e) => navigate("/")}>Cancel</button></p></div>
+                    <div style={{marginTop: '10px'}}>
+                    <label>Your Nickname:&nbsp;</label>
+                    {/* check component - in browser should change with each letter +/-  */}
+                    <input style={{width: '200px'}}
+                        onChange={(e) => setNickname(e.target.value)}
+                        name="nickname"
+                        value={nickname}
+                    /></div>
+                    
+                    <div style={{marginTop: '10px'}}>
+                    <label>Comment:&nbsp;</label>
+                    {/* check component - in browser should change with each letter +/-  */}
+                    <textarea style={{width: '400px', height: '54px'}}
+                        onChange={(e) => setComment(e.target.value)}
+                        name="comment"
+                        value={comment}
+                    /></div>
+                    {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
+                    {errors.nickname ? <span>{errors.nickname.message}</span> : null}
+                    {errors.comment ? <span>{errors.comment.message}</span> : null}
+                    <div><p><button type="sumbit">Submit</button>&nbsp;&nbsp;&nbsp;
+                    <button onClick={(e) => navigate("/")}>Cancel</button></p></div>
+                </div>
             </form>
         </div>
     );

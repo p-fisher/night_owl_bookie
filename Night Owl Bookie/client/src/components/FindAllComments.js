@@ -33,7 +33,7 @@ const FindAllComments = () => {
     }
     return(
         <div>
-            <div style={{marginTop: '20px'}}>
+            <div style={{marginTop: '40px'}}>
                 <h1>List All Comments</h1>
             </div>
             <div className="all-comments-container">
@@ -53,11 +53,11 @@ const FindAllComments = () => {
                                 <tr key={index}> 
                                     <td style = {{width: '200px'}}>{blogComment.nickname}</td>
                                     <td style = {{width: '600px'}}>{blogComment.comment}</td>
-                                    <td style = {{width: '50px'}}>{blogComment.isSuggestion ? <span>(Sug'n)</span> : null }</td>
+                                    <td style = {{width: '50px'}}>{blogComment.isSuggestion ? <span>(Suggested)</span> : null }</td>
                                     <td style = {{width: '150px', textAlign: 'right'}}>
                                         <button onClick={()=> {navigate(`/comments/edit/${blogComment._id}`)}}>
                                             Edit
-                                        </button>&nbsp;&nbsp;
+                                        </button>&nbsp;&nbsp;&nbsp;
                                         <button onClick={() => deleteHandler(blogComment._id) }>
                                             Delete
                                         </button>
