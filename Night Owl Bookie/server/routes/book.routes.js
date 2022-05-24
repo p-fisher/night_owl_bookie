@@ -10,6 +10,3 @@ module.exports = (app) => {
     app.delete("/api/books/:id", bookCtrl.deleteAnExistingBook);
 };
 
-
-// from PF: do we need a "suggestOneBook"?
-// from PF: what about a PATCH for editing instead of PUT (PUT replaces the whole record where PATCH edits)

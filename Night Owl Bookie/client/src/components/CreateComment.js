@@ -19,12 +19,6 @@ const CreateNewComment = (props) => {
             .then((res) => {
                 console.log(res);
                 console.log(res.data);
-                // navigate("/");
-                //setState back to "", clearing out form on submission success
-                // setAuthorList([...commentsList,res.data])
-                // setTitle("");
-                // setPrice("");
-                // setDescription("");
             })
             .catch((err) => {
                 console.log(err);
@@ -34,7 +28,6 @@ const CreateNewComment = (props) => {
 
     return (
         <div>
-            {/* <div style={{width: '500px',height: '200px', margin: '0 auto', backgroundColor: 'lightgray', lineHeight: '200px'}}>(the list all comments content goes here)</div> */}
             <form onSubmit={submitHandler}>
             {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
                 <header>
@@ -64,7 +57,6 @@ const CreateNewComment = (props) => {
                 {errors.nickname ? <span>{errors.nickname.message}</span> : null}
                 {errors.comment ? <span>{errors.comment.message}</span> : null}
                 <div><p><button type="sumbit">Submit</button>
-                {/* When this button is clicked, navigate back to "/" route */}
                 <button onClick={(e) => navigate("/")}>Cancel</button></p></div>
             </form>
         </div>
