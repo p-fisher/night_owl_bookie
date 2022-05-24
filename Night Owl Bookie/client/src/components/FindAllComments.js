@@ -26,7 +26,6 @@ const FindAllComments = () => {
                 console.log(response);
                 console.log(response.data);
                 setListAllComments(listAllComments.filter((blogComment) => blogComment._id !== id))
-                // navigate("/comments/list_all"); //here so page is refreshed and you can see comment is gone
             })
             .catch((error) => {
                 console.log(error);
@@ -34,17 +33,10 @@ const FindAllComments = () => {
     }
     return(
         <div>
-            {/* <div style={{width: '1000px', height:'72px', margin: '0 auto', backgroundColor: 'black', color:'white', lineHeight: '72px'}}>
-                Night Owl Bookie&nbsp;&nbsp;
-                <button onClick={() => {navigate(`/`)}}>
-                    Home
-                </button>    
-            </div> */}
             <div style={{marginTop: '20px'}}>
                 <h1>List All Comments</h1>
             </div>
             <div className="all-comments-container">
-            {/* <table className="all-comments-table"> */}
             <table style={{width: '1000px', textAlign: 'left', margin: '0 auto'}}>
                     <thead className="table-head">
                         <tr className="table-row">
