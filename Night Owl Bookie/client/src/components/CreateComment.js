@@ -3,12 +3,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const CreateNewComment = (props) => {
+
+    const {listAllComments, setListAllComments} = props; //props here lets us have the 
     const navigate = useNavigate();
     const [errors, setErrors] = useState({});
     const [comment, setComment] = useState("");
     const [nickname, setNickname] = useState("");
     const [isSuggestion, setIsSuggestion] = useState(false);
-
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -21,17 +22,17 @@ const CreateNewComment = (props) => {
         .then((res) => {
             console.log(res);
             console.log(res.data);
-            if (res.data.createdComment) {
-                console.log("TEST");
-                navigate("/comments/list_add");
-            } else {
-                setErrors(res.data.error.errors);
-            }
-            
+            setListAllComments([...listAllComments, {nickname, comment, isSuggestion}]);
+            setComment("");
+            setNickname("");
+            setIsSuggestion(false);
         })
         .catch((err) => {
             console.log(err);
-            // setErrors(err.response.data.error.errors);
+            console.log(err.response);
+            console.log(err.response.data);
+            //setErrors(err.data.error.errors);
+            setErrors(err.response.data.errors);
             });
     };
 

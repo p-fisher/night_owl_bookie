@@ -1,11 +1,11 @@
 import axios from "axios";
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import {useNavigate } from "react-router-dom";
 
 
-const FindAllComments = () => {
+const FindAllComments = (props) => {
 
-    const [listAllComments, setListAllComments] = useState([]); //useState to hold all comments
+    const {listAllComments, setListAllComments} = props; //props here lets us have the 
     const navigate = useNavigate();
 
     useEffect(() => {
