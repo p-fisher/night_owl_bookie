@@ -40,22 +40,22 @@ const CreateNewComment = (props) => {
             <hr style={{marginTop: '40px', width: '1000px'}}></hr>
             <form onSubmit={submitHandler}>
             {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
-                <header style={{marginTop: '40px'}}>
+                <header style={{marginTop: '30px'}}>
                     <h1>Add a Comment</h1>
                 </header>
                 <div>
                 <label>Your Nickname:</label>
                 {/* check component - in browser should change with each letter +/-  */}
-                <input
+                <input style={{marginLeft: '10px'}}
                     onChange={(e) => setNickname(e.target.value)}
                     name="nickname"
                     value={nickname}
                 /></div>
                 
-                <div>
+                <div style={{margin: '20px 0'}}>
                 <label>Comment:</label>
                 {/* check component - in browser should change with each letter +/-  */}
-                <textarea
+                <textarea style={{marginLeft: '10px'}}
                     onChange={(e) => setComment(e.target.value)}
                     name="comment"
                     value={comment}
@@ -69,7 +69,7 @@ const CreateNewComment = (props) => {
                 {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
                 {errors.nickname ? <span>{errors.nickname.message}</span> : null}
                 {errors.comment ? <span>{errors.comment.message}</span> : null}
-                <div><p><button>Submit</button>
+                <div><p><button>Submit</button>&nbsp;&nbsp;&nbsp;
                 <button onClick={(e) => navigate("/")}>Cancel</button></p></div>
             </form>
         </div>
