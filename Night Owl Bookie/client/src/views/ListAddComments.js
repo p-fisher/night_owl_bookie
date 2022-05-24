@@ -15,7 +15,7 @@ const ListAddComments = (props) => {
     const [nickname, setNickname] = useState([]);
     const [comment, setComment] = useState([]);
     const [isSuggestion, setIsSuggestion] = useState(false);
-
+    const [listAllComments, setListAllComments] = useState([]); //useState to hold all comments
     const navigate = useNavigate();
 
 
@@ -49,10 +49,14 @@ const ListAddComments = (props) => {
                 setComment={setComment}
                 isSuggestion={isSuggestion}
                 setIsSuggestion={setIsSuggestion}
+                listAllComments={listAllComments}
+                setListAllComments={setListAllComments}
             />
             <CreateNewComment
                 newComment={newComment}
                 setNewComment={setNewComment}
+                listAllComments={listAllComments}
+                setListAllComments={setListAllComments}
             />
         </div>
         </div>
