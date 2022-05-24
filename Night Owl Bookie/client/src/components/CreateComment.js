@@ -60,7 +60,7 @@ const CreateNewComment = (props) => {
                     name="comment"
                     value={comment}
                 /></div>
-                <label>Is this a book suggestion?</label>
+                <label>My comment includes a book suggestion </label>
                 <input
                 onChange={(e) => setIsSuggestion(e.target.checked)}
                     checked= {isSuggestion}
