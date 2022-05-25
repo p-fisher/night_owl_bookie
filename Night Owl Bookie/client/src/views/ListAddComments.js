@@ -18,7 +18,7 @@ const ListAddComments = (props) => {
 
 
     return (
-        <div>
+        <div className="view-component-container">
 <div className="int_topbar">
             <div className="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
                 <div className="int_topbar_head">NIGHT OWL BOOKIE</div>
@@ -29,14 +29,14 @@ const ListAddComments = (props) => {
                                     </div>
                                     </div>
         <div style={{marginTop: '20px'}}>
-        <h1>Blog</h1>
+        <h1 className="blog-title">BLOG</h1>
         <div>
             {/* We pass down the getter/setter via props obj, with a key of comments (nickname, setNickname....) 
             and a corresponding value of (the getter itself) 
             
                 You can name the key whatever you want, but this naming convention allows for less confusion and easy usage
                 (see deconstructuring/usage in Child components)*/}
-
+            <p className="p-in-view">Feel free to share your thoughts on the books of this month, book suggestions, or any thoughts on literature</p>
             <FindAllComments
                 nickname={nickname}
                 setNickname={setNickname}

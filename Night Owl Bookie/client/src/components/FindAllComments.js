@@ -32,11 +32,10 @@ const FindAllComments = (props) => {
             })
     }
     return(
-        <div>
+        <div className="all-comments-container">
             <div style={{marginTop: '40px'}}>
-                <h1>List All Comments</h1>
             </div>
-            <div className="all-comments-container">
+            <div >
             <table style={{width: '1000px', border: '1px', textAlign: 'left', margin: '0 auto'}}>
 
                     <tbody>

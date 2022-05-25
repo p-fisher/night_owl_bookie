@@ -23,7 +23,7 @@ const FindOneBook = (props) => {
     },[id]);
 
     return (
-        <div>
+        <div className="view-one-book-container">
         <div class="int_topbar">
             <div class="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
                 <div class="int_topbar_head">NIGHT OWL BOOKIE</div>
@@ -34,9 +34,9 @@ const FindOneBook = (props) => {
                                     </div>
                                     </div>
 
-        <h1>Book Details</h1>
+        <h1 className="BD-title">BOOK DETAILS</h1>
 
-        <div style={{marginTop: '20px'}}>
+        <div style={{marginTop: '20px'}} className="one-book-details">
             <h2>{oneBook.title}</h2>
             <p><img style={{width:'300px'}} src={oneBook.imageUrl} alt=""></img></p>
             <p>Author: {oneBook.authorName}</p>
@@ -44,14 +44,16 @@ const FindOneBook = (props) => {
             <p>Publication Date: {oneBook.year}</p>
             <p>Book Length: {oneBook.pages}</p>
             <p>Description: {oneBook.description}</p>
-            <p>Likes: {oneBook.likes}</p>
-            <p><button 
-                                        onClick={() => {
-                                            navigate(`/comments/list_add`);
-                                        }}
-                                    >GO TO BLOG</button></p>
-                <button onClick={()=>{navigate(`/books/list_all`)}}>
-                    BACK TO BOOKS OF THE MONTH
+            {/* <p>Likes: {oneBook.likes}</p> */}
+        </div>
+        <div className="book-deets-buttons-container">
+                <button className="go-to-blog-bookdetailspage"
+                onClick={() => {navigate(`/comments/list_add`);}}>
+                    GO TO BLOG
+                </button>
+                <button className="back-to-list-bookdetailspage"
+                onClick={()=>{navigate(`/books/list_all`)}}>
+                    BACK TO LIST
                 </button>
         </div>
         </div>
