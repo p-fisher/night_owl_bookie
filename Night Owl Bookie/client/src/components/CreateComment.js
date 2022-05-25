@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const CreateNewComment = (props) => {
 
-    const {listAllComments, setListAllComments} = props; //props here lets us have the 
+    const {listAllComments, setListAllComments} = props; //props here lets us have the properties from view component 'ListAdd'
     const navigate = useNavigate();
     const [errors, setErrors] = useState({});
     const [comment, setComment] = useState("");
@@ -22,16 +22,15 @@ const CreateNewComment = (props) => {
         .then((res) => {
             console.log(res);
             console.log(res.data);
-            setListAllComments([...listAllComments, {nickname, comment, isSuggestion}]);
-            setComment("");
-            setNickname("");
-            setIsSuggestion(false);
+            setListAllComments([...listAllComments, {nickname, comment, isSuggestion}]); 
+            setComment(""); //so add comment empties after submit
+            setNickname(""); //so add comment empties after submit
+            setIsSuggestion(false); //so add comment empties after submit
         })
         .catch((err) => {
             console.log(err);
             console.log(err.response);
             console.log(err.response.data);
-            //setErrors(err.data.error.errors);
             setErrors(err.response.data.errors);
             });
     };
@@ -39,40 +38,54 @@ const CreateNewComment = (props) => {
     return (
         <div>
             <hr style={{marginTop: '40px', width: '1000px'}}></hr>
-            <form onSubmit={submitHandler}>
-            {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
-                <header style={{marginTop: '30px'}}>
-                    <h1>Add a Comment</h1>
-                </header>
-                <div>
-                <label>Your Nickname:</label>
-                {/* check component - in browser should change with each letter +/-  */}
-                <input style={{marginLeft: '10px'}}
-                    onChange={(e) => setNickname(e.target.value)}
-                    name="nickname"
-                    value={nickname}
-                /></div>
-                
-                <div style={{margin: '20px 0'}}>
-                <label>Comment:</label>
-                {/* check component - in browser should change with each letter +/-  */}
-                <textarea style={{marginLeft: '10px'}}
-                    onChange={(e) => setComment(e.target.value)}
-                    name="comment"
-                    value={comment}
-                /></div>
-                <label>My comment includes a book suggestion </label>
-                <input
-                onChange={(e) => setIsSuggestion(e.target.checked)}
-                    checked= {isSuggestion}
-                    type= "checkbox"
-                />
-                {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
-                {errors.nickname ? <span>{errors.nickname.message}</span> : null}
-                {errors.comment ? <span>{errors.comment.message}</span> : null}
-                <div><p><button>Submit</button>&nbsp;&nbsp;&nbsp;
-                <button onClick={(e) => navigate("/")}>Cancel</button></p></div>
-            </form>
+                <form onSubmit={submitHandler}>
+
+                    <header style={{marginTop: '30px'}}>
+                        <h1>Add a Comment</h1>
+                    </header>
+
+                    <div>
+                        <label>Your Nickname:</label>
+
+                        {/* check component - in browser should change with each letter +/-  */}
+                        <input style={{marginLeft: '10px'}}
+                            onChange={(e) => setNickname(e.target.value)}
+                            name="nickname"
+                            value={nickname}
+                        />
+                    </div>
+                    
+                    <div style={{margin: '20px 0'}}>
+                        <label>Comment:</label>
+                        {/* check component - in browser should change with each letter +/-  */}
+                        <textarea style={{marginLeft: '10px'}}
+                            onChange={(e) => setComment(e.target.value)}
+                            name="comment"
+                            value={comment}
+                        />
+                    </div>
+                        <label>My comment includes a book suggestion </label>
+                        <input
+                            onChange={(e) => setIsSuggestion(e.target.checked)}
+                            checked= {isSuggestion}
+                            type= "checkbox"
+                        />
+
+                    {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
+                        {errors.nickname ? <span>{errors.nickname.message}</span> : null}
+                        {errors.comment ? <span>{errors.comment.message}</span> : null}
+                    <div>
+                        <p>
+                            <button>
+                                Submit
+                            </button>&nbsp;&nbsp;&nbsp;
+
+                            <button onClick={(e) => navigate("/")}>
+                                Cancel
+                            </button>
+                        </p>
+                    </div>
+                </form>
         </div>
     );
 };
