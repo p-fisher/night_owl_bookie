@@ -25,7 +25,7 @@ const ListAddComments = (props) => {
                 <div><button id="int_topbar_button" onClick={() => {
                                             navigate(`/`);
                                         }}
-                                    >Home</button></div>
+                                    >HOME</button></div>
                                     </div>
                                     </div>
         <div style={{marginTop: '20px'}}>

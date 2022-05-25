@@ -47,7 +47,7 @@ const CreateNewComment = (props) => {
                         <label>Nickname:</label>
 
                         {/* check component - in browser should change with each letter +/-  */}
-                        <input style={{marginLeft: '10px'}}
+                        <input style={{marginLeft: '10px', width: '200px'}}
                             onChange={(e) => setNickname(e.target.value)}
                             name="nickname"
                             value={nickname}
@@ -57,7 +57,7 @@ const CreateNewComment = (props) => {
                     <div style={{margin: '20px 0'}}>
                         <label>Comment:</label>
                         {/* check component - in browser should change with each letter +/-  */}
-                        <textarea style={{marginLeft: '10px'}}
+                        <textarea style={{marginLeft: '10px', width: '200px', height: '72px'}}
                             onChange={(e) => setComment(e.target.value)}
                             name="comment"
                             value={comment}
@@ -76,11 +76,11 @@ const CreateNewComment = (props) => {
                     <div>
                         <p>
                             <button>
-                                Submit
+                                SUBMIT
                             </button>&nbsp;&nbsp;&nbsp;
 
                             <button onClick={(e) => navigate("/")}>
-                                Cancel
+                                CANCEL
                             </button>
                         </p>
                     </div>
