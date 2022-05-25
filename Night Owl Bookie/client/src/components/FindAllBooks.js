@@ -21,9 +21,9 @@ const FindAllBooks = (props) => {
 
     return (
         <div>
-        <div class="int_topbar">
-            <div class="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
-                <div class="int_topbar_head">NIGHT OWL BOOKIE</div>
+        <div className="int_topbar">
+            <div className="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
+                <div className="int_topbar_head">NIGHT OWL BOOKIE</div>
                 <div><button id="int_topbar_button" onClick={() => {
                                             navigate(`/`);
                                         }}

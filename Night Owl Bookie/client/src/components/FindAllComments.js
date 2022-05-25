@@ -38,14 +38,7 @@ const FindAllComments = (props) => {
             </div>
             <div className="all-comments-container">
             <table style={{width: '1000px', border: '1px', textAlign: 'left', margin: '0 auto'}}>
-                    {/* <thead className="table-head">
-                        <tr className="table-row">
-                            <th style = {{width: '20%'}}>Nickname</th> 
-                            <th style = {{width: '50%'}}>Comment</th>
-                            <th style = {{width: '10%'}}>Suggestion?</th>
-                            <th style = {{width: '20%'}}>Actions</th>
-                        </tr>
-                    </thead> */}
+
                     <tbody>
                         {
                             listAllComments ? //shorter if statement
@@ -70,7 +63,6 @@ const FindAllComments = (props) => {
                 </table>
             </div>
         </div>
-        
     )
 }
 

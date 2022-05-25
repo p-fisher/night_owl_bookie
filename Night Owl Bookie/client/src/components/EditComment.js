@@ -48,48 +48,49 @@ const EditComment = (props) => {
     }
     return(
         <div>
-        <div class="int_topbar">
-            <div class="int_topbar_nav"><img id="int_topbar_logo" src={barlogo} alt=""></img>
-                <div class="int_topbar_head">NIGHT OWL BOOKIE</div>
-                <div><button id="int_topbar_button" onClick={() => {
-                                            navigate(`/`);
-                                        }}
-                                    >Home</button></div>
-                                    </div>
-                                    </div>
-            <div style={{marginTop: '20px'}}>
-                <h1>Edit your comment</h1>
-            </div>
-            <form onSubmit={updateHandler}>
-                <div className="all-comments-container">
-                    <p>Nickname:</p>
-                    <input
-                        value={nickname}
-                        type="text"
-                        onChange={(event) => setNickname(event.target.value)}
-                    />
-                    <p>Comment:</p>
-                    <textarea style={{width: '400px', height: '250px'}}
-                        value={comment}
-                        type="text"
-                        onChange={(event) => setComment(event.target.value)}
-                    />
-                    <p>Is this a suggestion?
-                    <input
-                        checked={isSuggestion}
-                        type="checkbox"
-                        onChange={(event) => setIsSuggestion(event.target.checked)}
-                    /></p>
+            <div class="int_topbar">
+                <div class="int_topbar_nav">
+                    <img id="int_topbar_logo" src={barlogo} alt=""></img>
+                    <div class="int_topbar_head">NIGHT OWL BOOKIE</div>
+                    <div>
+                        <button id="int_topbar_button" onClick={() => {navigate(`/`);
+}}>
+                                                Home</button></div>
+                                        </div>
+                                        </div>
+                <div style={{marginTop: '20px'}}>
+                    <h1>Edit your comment</h1>
                 </div>
-                <button className="confirm-changes-button" type="submit">
-                    CONFIRM CHANGES
-                </button>&nbsp;&nbsp;&nbsp;
-                <button onClick={(event) => navigate(`/comments/list_add`)}>
-                    Cancel
-                </button>
-                {errors.nickname ? <span>{errors.nickname.message}</span> : null}
-                {errors.comment ? <span>{errors.comment.message}</span> : null}
-            </form>
+                <form onSubmit={updateHandler}>
+                    <div className="all-comments-container">
+                        <p>Nickname:</p>
+                        <input
+                            value={nickname}
+                            type="text"
+                            onChange={(event) => setNickname(event.target.value)}
+                        />
+                        <p>Comment:</p>
+                        <textarea style={{width: '400px', height: '250px'}}
+                            value={comment}
+                            type="text"
+                            onChange={(event) => setComment(event.target.value)}
+                        />
+                        <p>Is this a suggestion?
+                        <input
+                            checked={isSuggestion}
+                            type="checkbox"
+                            onChange={(event) => setIsSuggestion(event.target.checked)}
+                        /></p>
+                    </div>
+                    <button className="confirm-changes-button" type="submit">
+                        CONFIRM CHANGES
+                    </button>&nbsp;&nbsp;&nbsp;
+                    <button onClick={(event) => navigate(`/comments/list_add`)}>
+                        Cancel
+                    </button>
+                    {errors.nickname ? <span>{errors.nickname.message}</span> : null}
+                    {errors.comment ? <span>{errors.comment.message}</span> : null}
+                </form>
         </div>
         
     )
