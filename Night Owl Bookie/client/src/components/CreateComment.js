@@ -38,14 +38,13 @@ const CreateNewComment = (props) => {
     return (
         <div>
             <hr style={{marginTop: '40px', width: '1000px'}}></hr>
-                <form onSubmit={submitHandler}>
 
-                    <header style={{marginTop: '30px'}}>
-                        <h1>Add a Comment</h1>
-                    </header>
-
+                <form onSubmit={submitHandler} className="comment-form">
+                <header style={{marginTop: '30px'}}>
+                <h1 className="add-comment-title">ADD COMMENT</h1>
+            </header>
                     <div>
-                        <label>Your Nickname:</label>
+                        <label>Nickname:</label>
 
                         {/* check component - in browser should change with each letter +/-  */}
                         <input style={{marginLeft: '10px'}}

@@ -47,7 +47,7 @@ const EditComment = (props) => {
             })
     }
     return(
-        <div>
+        <div className="edit-form-container">
             <div class="int_topbar">
                 <div class="int_topbar_nav">
                     <img id="int_topbar_logo" src={barlogo} alt=""></img>
