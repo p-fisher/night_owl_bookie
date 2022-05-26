@@ -69,10 +69,14 @@ const CreateNewComment = (props) => {
                             checked= {isSuggestion}
                             type= "checkbox"
                         />
+                        <br/>
+                        <br/>
 
                     {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
                         {errors.nickname ? <span>{errors.nickname.message}</span> : null}
+                        <br/>
                         {errors.comment ? <span>{errors.comment.message}</span> : null}
+                        <br/>
                     <div>
                         <p>
                             <button>
