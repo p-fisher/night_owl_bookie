@@ -81,6 +81,10 @@ const EditComment = (props) => {
                             type="checkbox"
                             onChange={(event) => setIsSuggestion(event.target.checked)}
                         /></p>
+                        {errors.nickname ? <span>{errors.nickname.message}</span> : null}
+                        <br/>
+                        {errors.comment ? <span>{errors.comment.message}</span> : null}
+                        <br/>
                     </div>
                     <div style={{marginTop: '3%'}}><button className="confirm-changes-button" type="submit">
                         CONFIRM CHANGES
@@ -88,8 +92,6 @@ const EditComment = (props) => {
                     <button onClick={(event) => navigate(`/comments/list_add`)}>
                         CANCEL CHANGES
                     </button>
-                    {errors.nickname ? <span>{errors.nickname.message}</span> : null}
-                    {errors.comment ? <span>{errors.comment.message}</span> : null}
                     </div>
                 </form>
         </div>
