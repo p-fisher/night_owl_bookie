@@ -30,7 +30,7 @@ const FindOneBook = (props) => {
                 <div><button id="int_topbar_button" onClick={() => {
                                             navigate(`/`);
                                         }}
-                                    >Home</button></div>
+                                    >HOME</button></div>
                                     </div>
                                     </div>
 
@@ -38,12 +38,12 @@ const FindOneBook = (props) => {
 
         <div style={{marginTop: '20px'}} className="one-book-details">
             <h2>{oneBook.title}</h2>
-            <p><img style={{width:'300px'}} src={oneBook.imageUrl} alt=""></img></p>
+            <p><img style={{height:'300px'}} src={oneBook.imageUrl} alt=""></img></p>
             <p>Author: {oneBook.authorName}</p>
             <p>Genre: {oneBook.genre}</p>
             <p>Publication Date: {oneBook.year}</p>
             <p>Book Length: {oneBook.pages}</p>
-            <p>Description: {oneBook.description}</p>
+            <p style={{width: '1000px', margin: '0 auto'}}>Description: {oneBook.description}</p>
             {/* <p>Likes: {oneBook.likes}</p> */}
         </div>
         <div className="book-deets-buttons-container">

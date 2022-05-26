@@ -33,8 +33,6 @@ const FindAllComments = (props) => {
     }
     return(
         <div className="all-comments-container">
-            <div style={{marginTop: '40px'}}>
-            </div>
             <div >
             <table style={{width: '1000px', border: '1px', textAlign: 'left', margin: '0 auto'}}>
 
@@ -44,14 +42,14 @@ const FindAllComments = (props) => {
                             listAllComments.map((blogComment,index) => ( 
                                 <tr key={index}> 
                                     <td style = {{width: '200px'}}>{blogComment.nickname}</td>
-                                    <td style = {{width: '600px'}}>{blogComment.comment}</td>
-                                    <td style = {{width: '50px'}}>{blogComment.isSuggestion ? <span>(Suggested)</span> : null }</td>
+                                    <td style = {{width: '530px'}}>{blogComment.comment}</td>
+                                    <td style = {{width: '120px'}}>{blogComment.isSuggestion ? <span>Suggested Title</span> : null }</td>
                                     <td style = {{width: '150px', textAlign: 'right'}}>
                                         <button onClick={()=> {navigate(`/comments/edit/${blogComment._id}`)}}>
-                                            Edit
+                                            EDIT
                                         </button>&nbsp;&nbsp;&nbsp;
                                         <button onClick={() => deleteHandler(blogComment._id) }>
-                                            Delete
+                                            DELETE
                                         </button>
                                     </td>
                                 </tr>

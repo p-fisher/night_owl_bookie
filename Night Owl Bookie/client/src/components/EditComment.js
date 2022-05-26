@@ -55,11 +55,11 @@ const EditComment = (props) => {
                     <div>
                         <button id="int_topbar_button" onClick={() => {navigate(`/`);
 }}>
-                                                Home</button></div>
+                                                HOME</button></div>
                                         </div>
                                         </div>
                 <div style={{marginTop: '20px'}}>
-                    <h1>Edit your comment</h1>
+                    <h1 className="edit-title">EDIT YOUR COMMENT</h1>
                 </div>
                 <form onSubmit={updateHandler}>
                     <div className="all-comments-container">
@@ -82,14 +82,15 @@ const EditComment = (props) => {
                             onChange={(event) => setIsSuggestion(event.target.checked)}
                         /></p>
                     </div>
-                    <button className="confirm-changes-button" type="submit">
+                    <div style={{marginTop: '3%'}}><button className="confirm-changes-button" type="submit">
                         CONFIRM CHANGES
                     </button>&nbsp;&nbsp;&nbsp;
                     <button onClick={(event) => navigate(`/comments/list_add`)}>
-                        Cancel
+                        CANCEL CHANGES
                     </button>
                     {errors.nickname ? <span>{errors.nickname.message}</span> : null}
                     {errors.comment ? <span>{errors.comment.message}</span> : null}
+                    </div>
                 </form>
         </div>
         

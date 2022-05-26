@@ -57,7 +57,7 @@ const FindAllBooks = (props) => {
                                                 navigate(`/books/details/${book._id}`);
                                             }}
                                         >
-                                            Details
+                                            DETAILS
                                         </button>
                                     </td>
                                 </tr>
